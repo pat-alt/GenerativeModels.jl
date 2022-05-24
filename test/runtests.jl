@@ -10,8 +10,8 @@ using GenerativeModels
 
 using ConditionalDists: SplitLayer
 
-if Flux.use_cuda[]
-    using CUDA
+using CUDA
+if CUDA.functional()
     CUDA.allowscalar(false)
 end
 
